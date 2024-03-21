@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import 'D:\\Projects\\chatdatagen\\chatdatagen\\src\\styles\\SignIn.css';
+import '../styles/SignIn.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');

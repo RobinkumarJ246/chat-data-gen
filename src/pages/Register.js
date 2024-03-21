@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import 'D:\\Projects\\chatdatagen\\chatdatagen\\src\\styles\\Register.css';
+import '../styles/Register.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
