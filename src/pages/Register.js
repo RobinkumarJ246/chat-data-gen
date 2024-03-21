@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/Register.css';
 
 const Register = () => {
@@ -14,12 +15,19 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here, you can add your logic to handle the registration
-    // For example, you can make an API call to your backend
-    console.log('Registration Data:', formData);
-    // After successful registration, you can navigate to another page or show a success message
+
+    try {
+      // Send the registration data to the server
+      const response = await axios.post('https://chat-data-gen-server.onrender.com/api/register', formData);
+      console.log(response.data.message);
+      alert("Your account has beed registered")
+      // After successful registration, you can navigate to another page or show a success message
+    } catch (err) {
+      console.error('Registration error:', err);
+      // Handle registration error
+    }
   };
 
   return (
