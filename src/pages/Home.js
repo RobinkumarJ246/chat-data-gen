@@ -1,8 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { inject, observer } from 'mobx-react';
 import '../styles/Home.css';
 
-const Home = () => {
+const Home = ({ authStore }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    authStore.logout();
+    console.log('Logged out');
+    console.log(authStore.isLoggedIn);
+    navigate('/'); // Call the logout method from authStore
+  };
   return (
     <div className="home-container">
       <div className="sidebar">
@@ -18,10 +26,10 @@ const Home = () => {
             <span className="tile-icon">&#128228;</span>
             <span className="tile-label">Manage Data</span>
           </div>
-          <div className="tile">
+          <Link to="/profile" className="tile">
             <span className="tile-icon">&#9881;</span>
-            <span className="tile-label">Settings</span>
-          </div>
+            <span className="tile-label">Profile</span>
+          </Link>
           <div className="tile">
             <span className="tile-icon">&#x2606;</span>
             <span className="tile-label">What's new</span>
@@ -36,14 +44,22 @@ const Home = () => {
         <header>
           <nav className="navbar">
             <div className="navbar-brand">Chat Data Generator</div>
-            <div className="navbar-links">
-              <Link to="/register" className="nav-link">
-                Register
-              </Link>
-              <Link to="/signin" className="nav-link">
-                Sign In
-              </Link>
-            </div>
+            <div>
+            {!authStore.isLoggedIn ? (
+  <div>
+    <Link to="/register" className="nav-link">
+      Register
+    </Link>
+    <Link to="/signin" className="nav-link">
+      Sign In
+    </Link>
+  </div>
+) : (
+  <Link to="/" onClick={handleLogout} className="nav-link"> 
+    Logout
+  </Link>
+)}
+    </div>
           </nav>
         </header>
         <main>
@@ -84,4 +100,5 @@ const Home = () => {
   );
 };
 
-export default Home;
+{/*}export default Home;{*/}
+export default inject('authStore')(observer(Home))
