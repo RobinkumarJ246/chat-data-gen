@@ -41,6 +41,7 @@ const Home = () => {
         <main>
           <section className="hero">
             <h1>Welcome to Chat Data Generator</h1>
+            <h4>Version: 0.1 (Carrot)</h4>
             <p>
               Generate high-quality chat datasets for training your conversational AI models.
             </p>
