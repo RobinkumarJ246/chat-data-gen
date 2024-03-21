@@ -69,7 +69,7 @@ const Home = () => {
         </main>
         <footer>
           <p>&copy; 2024 Chat Data Generator. All rights reserved.</p>
-          <p>For contact mail at innovatronix.team@gmail.com</p>
+          <p>For contact mail at innovatexcel.team@gmail.com</p>
         </footer>
       </div>
     </div>
