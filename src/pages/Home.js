@@ -22,6 +22,14 @@ const Home = () => {
             <span className="tile-icon">&#9881;</span>
             <span className="tile-label">Settings</span>
           </div>
+          <div className="tile">
+            <span className="tile-icon">&#x2606;</span>
+            <span className="tile-label">What's new</span>
+          </div>
+          {/*}<Link to="/whatsnew" className="tile">
+            <span className="tile-icon">&#x2606;</span>
+            <span className="tile-label">What's new</span>
+  </Link>{*/}
         </div>
       </div>
       <div className="main-content">

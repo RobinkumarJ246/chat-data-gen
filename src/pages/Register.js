@@ -23,12 +23,48 @@ const Register = () => {
       const response = await axios.post('https://chat-data-gen-server.onrender.com/api/register', formData);
       console.log(response.data.message);
       alert("Your account has been registered")
-      // After successful registration, you can navigate to another page or show a success message
-    } catch (err) {
-      console.error('Registration error:', err);
-      // Handle registration error
-    }
-  };
+       // Send a POST request to the welcome email endpoint
+    const emailResponse = await axios.post('https://chat-data-gen-server.onrender.com/api/welcome-mail', {
+      toEmail: formData.email, // User's email from the form
+      subject: 'Account creation success',
+      htmlContent: `
+        <<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to ChatDataGen</title>
+    </head>
+    <body style="font-family: Arial, sans-serif;">
+    
+        <!-- Header -->
+        <header style="background-color: #f0f0f0; padding: 20px;">
+            <h1 style="margin: 0; color: #333;">Welcome to ChatDataGen</h1>
+        </header>
+    
+        <!-- Content -->
+        <section style="padding: 20px;">
+            <p>Hello there,</p>
+            <p>Welcome to ChatDataGen! We're excited to have you on board.</p>
+            <p>This webapp is created to help data scientists and AI model engineers to craft conversational datasets using simpler steps.</p>
+            <p>The platform is still in beta development and can have bugs and errors, so please let us know your valuable feedback and suggestions that will greatly improve our solution.</p>
+            <p>We thank you once again for joining is in early stage</p>
+        </section>
+    
+        <!-- Footer -->
+        <footer style="background-color: #f0f0f0; padding: 20px; text-align: center;">
+            <p style="margin: 0;">Best regards,<br> Innovatexcel team</p>
+        </footer>
+    
+    </body>
+    </html>
+      `,
+    });
+    console.log(emailResponse.data.message);
+  } catch (err) {
+    console.error('Registration error:', err);
+    // Handle registration error
+  }
+};
 
   return (
     <div className="register-container">
