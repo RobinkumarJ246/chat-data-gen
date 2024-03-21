@@ -43,7 +43,7 @@ const Register = () => {
     
         <!-- Content -->
         <section style="padding: 20px;">
-            <p>Hello there,</p>
+            <p>Hello ${formData.userName},</p>
             <p>Welcome to ChatDataGen! We're excited to have you on board.</p>
             <p>This webapp is created to help data scientists and AI model engineers to craft conversational datasets using simpler steps.</p>
             <p>The platform is still in beta development and can have bugs and errors, so please let us know your valuable feedback and suggestions that will greatly improve our solution.</p>
