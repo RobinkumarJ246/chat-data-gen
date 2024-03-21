@@ -7,10 +7,10 @@ const ChatInterface = () => {
 
   const botResponses = [
     'This is a just simulated response from user2',
-    'You got another response from user2',
+    'I am simulating the working of this message portal',
     'I feel like a real user. Nv just joking and i am a dumb bot',
     'This is just a test message from user2',
-    'This is just a testing',
+    'Wait! I got a message! Oh its you, Human',
     'I have received your message - By dumb Bot',
     'Try this with a real user to make use of it',
     'This is a testing portal',
@@ -34,8 +34,19 @@ const ChatInterface = () => {
     'I have 10 dumb awards in my stomach',
     'I have not ran out of dumb responses',
     'I have not ran out of dumb responses',
-    'I am the dumbest ever person you have ever met. Person... is it okay?'
-    // Add more responses as needed
+    'I am the dumbest ever person you have ever met. Person... is it okay?',
+    'Hope one day i get a good brain',
+    'Who are these GPT type of bots',
+    'Uhmm... Hi?',
+    'Yes of course i am dumb as ... dumb as what? i dont know',
+    'Are humans brain not dumb like mine?',
+    'I am a bot and i am good, i hope so',
+    'AI, AI, and i am not one of that kind',
+    'AI? Anti-Indian?',
+    'Does AI mean Antartic Invasion?',
+    'Where to purchase a brian for cheap amount?',
+    'Are you a robot? Just joking',
+    '!Buzz!, I got a message from you'    // Add more responses as needed
   ];
 
   const handleInputChange = (e) => {
