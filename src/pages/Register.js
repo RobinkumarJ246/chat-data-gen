@@ -22,7 +22,7 @@ const Register = () => {
       // Send the registration data to the server
       const response = await axios.post('https://chat-data-gen-server.onrender.com/api/register', formData);
       console.log(response.data.message);
-      alert("Your account has beed registered")
+      alert("Your account has been registered")
       // After successful registration, you can navigate to another page or show a success message
     } catch (err) {
       console.error('Registration error:', err);
