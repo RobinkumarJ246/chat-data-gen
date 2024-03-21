@@ -68,7 +68,8 @@ const Home = () => {
           </section>
         </main>
         <footer>
-          <p>&copy; 2023 Chat Data Generator. All rights reserved.</p>
+          <p>&copy; 2024 Chat Data Generator. All rights reserved.</p>
+          <p>For contact mail at innovatronix.team@gmail.com</p>
         </footer>
       </div>
     </div>
