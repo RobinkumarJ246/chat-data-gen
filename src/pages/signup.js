@@ -28,7 +28,7 @@ const SignIn = ({ authStore }) => {
         console.log(authStore.isLoggedIn);
 
         // Navigate to the desired page after successful login
-        navigate('/dashboard');
+        navigate('/');
       } else {
         // Authentication failed
         alert(response.data.error || 'Login failed. Please try again later.');
