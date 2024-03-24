@@ -1,20 +1,43 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/SignIn.css';
+import { inject, observer } from 'mobx-react';
 
-const SignIn = () => {
+const SignIn = ({ authStore }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here, you can add your logic to authenticate the user
-    // For example, you can make an API call to your backend
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // After successful authentication, you can navigate to another page
-    navigate('/dashboard');
+
+    try {
+      // Make a request to your server to authenticate the user
+      const response = await axios.post('https://chat-data-gen-server.onrender.com/api/login', { email, password });
+
+      if (response.status === 200) {
+        // Authentication successful
+        console.log(response.data.message);
+
+        // Set the user details and login state in the authStore
+        authStore.setUserDetails({ email, password });
+        authStore.login();
+
+        console.log('Logged in');
+        console.log(authStore.isLoggedIn);
+
+        // Navigate to the desired page after successful login
+        navigate('/dashboard');
+      } else {
+        // Authentication failed
+        alert(response.data.error || 'Login failed. Please try again later.');
+      }
+    } catch (err) {
+      // Handle authentication error
+      console.error('Login error:', err);
+      alert('Login failed. Please try again later.');
+    }
   };
 
   return (
@@ -54,4 +77,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default inject('authStore')(observer(SignIn));
