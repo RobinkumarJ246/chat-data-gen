@@ -14,7 +14,7 @@ const SignIn = ({ authStore }) => {
 
     try {
       // Make a request to your server to authenticate the user
-      const response = await axios.post('https://your-server.com/api/login', { email, password });
+      const response = await axios.post('https://chat-data-gen-server.onrender.com/api/login', { email, password });
 
       if (response.status === 200) {
         // Authentication successful
