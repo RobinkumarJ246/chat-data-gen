@@ -14,14 +14,14 @@ const SignIn = ({ authStore }) => {
 
     try {
       // Make a request to your server to authenticate the user
-      const response = await axios.post('https://chat-data-gen-server.onrender.com/api/login', { email, password });
+      const response = await axios.post('https://your-server.com/api/login', { email, password });
 
       if (response.status === 200) {
         // Authentication successful
         console.log(response.data.message);
 
         // Set the user details and login state in the authStore
-        authStore.setUserDetails({ email, password });
+        authStore.setUserDetails({ email, password, userName: response.data.userName });
         authStore.login();
 
         console.log('Logged in');
@@ -29,6 +29,7 @@ const SignIn = ({ authStore }) => {
 
         // Navigate to the desired page after successful login
         navigate('/');
+
       } else {
         // Authentication failed
         alert(response.data.error || 'Login failed. Please try again later.');
