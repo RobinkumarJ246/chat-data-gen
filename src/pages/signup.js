@@ -34,9 +34,15 @@ const SignIn = ({ authStore }) => {
         alert(response.data.error || 'Login failed. Please try again later.');
       }
     } catch (err) {
-      // Handle authentication error
+      if (err.response && err.response.status === 401) {
+        // Registration failed due to existing email
+        alert('Invalid email or password');
+      }
+      else{
+         // Handle authentication error
       console.error('Login error:', err);
       alert('Login failed. Please try again later.');
+      }
     }
   };
 
