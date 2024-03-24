@@ -6,6 +6,10 @@ import Register from './pages/Register';
 import ChatInterface from './pages/ChatInterface';
 import Whatsnew from './pages/Whatsnew';
 import Profile from './pages/Profile';
+import Rooms from './pages/Rooms';
+import CreateRoom from './pages/CreateRoom';
+import JoinRoom from './pages/JoinRoom';
+import Room from './pages/Room';
 
 const App = () => {
 
@@ -18,6 +22,10 @@ const App = () => {
         <Route path="/chat-interface" element={<ChatInterface />} />
         <Route path="/whatsnew" element={<Whatsnew />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/rooms" element = {<Rooms />} />
+        <Route path="/create-room" element={<CreateRoom />} />
+        <Route path="/join-room" element={<JoinRoom />} />
+        <Route path="/room/:code" element={<Room />} />
       </Routes>
     </Router>
   );

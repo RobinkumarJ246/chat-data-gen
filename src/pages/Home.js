@@ -11,6 +11,11 @@ const Home = ({ authStore }) => {
     console.log(authStore.isLoggedIn);
     navigate('/'); // Call the logout method from authStore
   };
+
+  const NavigateToRooms = () => {
+    navigate('/rooms'); // Navigate to Rooms page
+  };
+
   return (
     <div className="home-container">
       <div className="sidebar">
@@ -18,10 +23,10 @@ const Home = ({ authStore }) => {
           <h3>Chat Data Generator</h3>
         </div>
         <div className="sidebar-tiles">
-          <Link to="/chat-interface" className="tile">
-            <span className="tile-icon">&#128172;</span>
-            <span className="tile-label">Generate Data</span>
-          </Link>
+        <div className="tile" onClick={NavigateToRooms}>
+          <span className="tile-icon">&#128172;</span>
+          <span className="tile-label">Generate Data</span>
+        </div>
           <div className="tile">
             <span className="tile-icon">&#128228;</span>
             <span className="tile-label">Manage Data</span>
