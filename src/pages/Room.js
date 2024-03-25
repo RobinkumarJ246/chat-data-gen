@@ -1,23 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/Room.css';
 import roomStore from '../RoomStore';  // Import RoomStore
 
 const Room = () => {
+    const { code } = useParams();
+    const navigate = useNavigate();
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState('');
     const [showOptions, setShowOptions] = useState(false);
+
+    useEffect(() => {
+        const checkAuthentication = async () => {
+            try {
+                const response = await axios.get(`https://chat-data-gen-server.onrender.com/api/check-auth/${code}`);
+                if (response.status !== 200) {
+                    navigate('/join-room');
+                }
+            } catch (error) {
+                console.error('Error checking authentication:', error);
+                navigate('/join-room');
+            }
+        };
+
+        checkAuthentication();
+    }, [code, navigate]);
 
     const handleInputChange = (e) => {
         setUserInput(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (userInput.trim() !== '') {
             const newUser1Message = { sender: 'user1', message: userInput.trim() };
             const newMessages = [...messages, newUser1Message];
             setMessages(newMessages);
-
             setUserInput('');
         }
     };
@@ -48,15 +67,9 @@ const Room = () => {
     };
 
     return (
-        <div className="room-container">
+        <div className="chat-container">
             <div className="chat-header">
-                <h2>Chatting Portal</h2>
-                <div className="room-code" onClick={() => {
-                    navigator.clipboard.writeText(roomStore.getRoomCode());
-                    alert('Room code copied to clipboard!');
-                }}>
-                    {roomStore.getRoomCode()}
-                </div>
+                <h2>Chatting Portal (Room Code: {roomStore.getRoomCode()})</h2>
                 <div className="options-dropdown">
                     <button onClick={toggleOptions} className="options-btn">Options</button>
                     {showOptions && (
