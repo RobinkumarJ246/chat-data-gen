@@ -1,20 +1,28 @@
 import { makeAutoObservable } from 'mobx';
 
 class RoomStore {
-    roomCode = '';
+  roomCode = '';
+  password = '';
 
-    constructor() {
-        makeAutoObservable(this);
-    }
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    setRoomCode(code) {
-        this.roomCode = code;
-    }
+  setRoomCode(code) {
+    this.roomCode = code;
+  }
 
-    getRoomCode() {
-        return this.roomCode;
-    }
+  getRoomCode() {
+    return this.roomCode;
+  }
+
+  setPassword(pwd) {
+    this.password = pwd;
+  }
+
+  getPassword() {
+    return this.password;
+  }
 }
 
-const roomStore = new RoomStore();
-export default roomStore;
+export default new RoomStore();

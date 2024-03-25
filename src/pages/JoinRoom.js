@@ -15,16 +15,17 @@ const JoinRoom = () => {
             setPasswordError('Room code cannot be empty.');
             return;
         }
-
+    
         const roomData = {
             roomCode: roomCode,
             password: password
         };
-
+    
         try {
             const response = await axios.post('https://chat-data-gen-server.onrender.com/api/join-room', roomData);
             if (response.status === 200) {
                 roomStore.setRoomCode(roomCode);  // Use RoomStore to set the room code
+                roomStore.setPassword(password);  // Use RoomStore to set the password
                 navigate(`/room/${roomCode}`);
             }
         } catch (error) {

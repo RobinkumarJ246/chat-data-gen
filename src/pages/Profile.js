@@ -20,6 +20,9 @@ const Profile = ({ authStore }) => {
       <Link to="/">
           <button className="back-btn">Back to Home</button>
         </Link>
+        <Link to="/tac">
+          <button className="back-btn">Terms and Conditions</button>
+        </Link>
     </div>
   );
 };

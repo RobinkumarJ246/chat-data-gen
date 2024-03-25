@@ -22,6 +22,13 @@ class AuthStore {
   setUserDetails(userDetails) {
     this.user = userDetails;
   }
+
+  getEmail() {
+    if (this.user) {
+      return this.user.email;
+    }
+    return null;
+  }
 }
 
 const authStore = new AuthStore();

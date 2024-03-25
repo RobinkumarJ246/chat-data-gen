@@ -10,6 +10,7 @@ import Rooms from './pages/Rooms';
 import CreateRoom from './pages/CreateRoom';
 import JoinRoom from './pages/JoinRoom';
 import Room from './pages/Room';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/create-room" element={<CreateRoom />} />
         <Route path="/join-room" element={<JoinRoom />} />
         <Route path="/room/:code" element={<Room />} />
+        <Route path="/tac" element={<TermsAndConditions />} />
       </Routes>
     </Router>
   );

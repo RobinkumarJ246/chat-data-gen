@@ -1,0 +1,83 @@
+/* TermsAndConditions.css */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 100px;
+    margin-right: 75px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+    margin: 0;
+}
+
+h2 {
+    color: #555;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    font-size: 0.9em;
+    color: #777;
+    text-align: right;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* TermsAndConditions.css */
+
+.footer {
+    margin-top: 50px;
+    border-top: 2px dashed #ddd;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.digitally-signed {
+    font-size: 1.5em;
+    color: rgb(66, 66, 66);
+    font-weight: bold;
+    /*text-decoration: underline;*/
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
