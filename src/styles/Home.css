@@ -35,6 +35,7 @@ body {
 .brand-link {
   color: #fff;
   text-decoration: none;
+  text-align: center;
 }
 
 .navbar-toggle {
@@ -148,8 +149,8 @@ main {
   max-width: 300px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
 }
 
 /* Footer */

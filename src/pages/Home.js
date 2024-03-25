@@ -84,7 +84,7 @@ const Home = ({ authStore }) => {
           <section className="hero">
             <h1>Welcome to Chat Data Generator</h1>
             <h4>Version: 0.8 (Carrot)</h4>
-            <p>Generate high-quality chat datasets for training your conversational AI models.</p>
+            <p>Generate high-quality, custom chat datasets for training your conversational AI models.</p>
           </section>
           <section className="features">
             <div className="feature-card">
@@ -96,8 +96,8 @@ const Home = ({ authStore }) => {
               <p>Our advanced algorithms ensure that the generated conversations are natural, coherent, and context-aware.</p>
             </div>
             <div className="feature-card">
-              <h2>Scalable Generation</h2>
-              <p>Generate datasets of any size, from a few thousand conversations to millions, with fast and efficient processing.</p>
+              <h2>Dataset in any language</h2>
+              <p>Generate datasets in any language including casual languages with flexiblity</p>
             </div>
           </section>
         </main>
